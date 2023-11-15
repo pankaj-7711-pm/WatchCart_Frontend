@@ -1,13 +1,223 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@200;300;400;900&family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* font-family: 'Poppins', sans-serif; */
+/* font-family: 'Playfair Display', serif; */
+
+.navbar{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  background-color: black;
+  /* background-color: #161616; */
+  color: white !important;
+  /* box-shadow: 0 8px 6px -6px gray; */
+  /* --webkit-box-shadow: 0 8px 6px -6px gray; */
+  /* border-bottom: solid gray !important; */
 }
+.navbar-brand{
+  color: white !important;
+}
+
+.nav-link{
+  font-weight: 300 !important;
+  color: white !important;
+}
+.nav-link:hover{
+  color: yellow !important;
+}
+
+.active{
+  color: yellow !important;
+}
+
+.active:hover{
+  color: white !important;
+}
+
+.dropdown{
+  color: white !important;
+}
+
+.navbar-brand{
+  font-weight: 700;
+  font-family: 'roboto', sans-serif;
+  letter-spacing: 3px;
+}
+
+.footer{
+  color: white;
+  padding: 25px;
+  background: black;
+  border-top: 1px solid grey;
+  /* padding: 5rem !important; */
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.footer a:hover{
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba;
+}
+
+.pnf{
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnf-title{
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.pnf-heading{
+  font-weight: normal;
+}
+
+.pnf-btn{
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.contactus{
+  display: flex;
+  min-height: 65vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* register page */
+
+.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  flex-direction: column;
+}
+
+.product-link{
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.navbar-main-div{
+  display: flex ;
+  flex-direction: row ;
+  flex-wrap: wrap !important;
+  justify-content: space-between;
+}
+
+.cart-header{
+  display: flex ;
+  /* justify-content: center; */
+  align-items: center;
+  
+}
+
+.cart-header .nav-link{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+}
+
+.all-products-homepage-main-div{
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  /* align-items:center !important ; */
+  background-color: black;
+}
+
+.filter-main-div{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background-color: black;
+  color: white !important;
+}
+
+.search-main-div{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  
+}
+
+.avatar{
+  display: flex;
+  justify-content: center;
+}
+
+.product-details-img{
+  /* min-height:"80vh" !important; */
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+}
+
+.product-details-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.similar-product{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-orders-img{
+  /* display: flex;
+  justify-content: end; */
+}
+
+.categories-map{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem !important;
+  /* padding: 3rem; */
+}
+
+.categories-link{
+  padding: 2rem;
+  width: 100%;
+  border-radius: 19px !important;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(82, 62, 62);
+  font-size: larger;
+  color: white;
+}
+
+.categories-link:hover{
+  color: yellow;
+  background-color: black;
+}
+
+
+.search-input,.search-button{
+  border-radius: 40px;
+}
+
