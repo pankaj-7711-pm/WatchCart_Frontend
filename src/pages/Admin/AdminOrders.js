@@ -16,7 +16,9 @@ const AdminOrders = () => {
   //get orders
   const getOrders = async () => {
     try {
-      const { data } = await axios.get("/api/v1/auth/all-orders");
+      const { data } = await axios.get(
+        "https://watchcart-backend.onrender.com/api/v1/auth/all-orders"
+      );
       setOrders(data);
     } catch (error) {
       // console.log(error);
@@ -29,9 +31,12 @@ const AdminOrders = () => {
 
   const handleChange = async (orderId, value) => {
     try {
-      const { data } = await axios.put(`/api/v1/auth/order-status/${orderId}`, {
-        status: value,
-      });
+      const { data } = await axios.put(
+        `https://watchcart-backend.onrender.com/api/v1/auth/order-status/${orderId}`,
+        {
+          status: value,
+        }
+      );
       getOrders();
     } catch (error) {
       // console.log(error);
@@ -50,7 +55,7 @@ const AdminOrders = () => {
               orders?.map((o, i) => {
                 return (
                   <div className="border shadow mt-3">
-                    <table className='table'>
+                    <table className="table">
                       <thead>
                         <tr>
                           <th scope="col">#</th>
@@ -65,9 +70,15 @@ const AdminOrders = () => {
                         <tr>
                           <td>{i + 1}</td>
                           <td>
-                            <Select bordered={false} onChange={(value) => handleChange(o._id, value)} defaultValue={o?.status}>
-                              {status.map((s,i)=>(
-                                <Option key={i} value={s}>{s}</Option>
+                            <Select
+                              bordered={false}
+                              onChange={(value) => handleChange(o._id, value)}
+                              defaultValue={o?.status}
+                            >
+                              {status.map((s, i) => (
+                                <Option key={i} value={s}>
+                                  {s}
+                                </Option>
                               ))}
                             </Select>
                           </td>
@@ -84,11 +95,9 @@ const AdminOrders = () => {
                         <div className="row mb-2 p-3  flex-row" key={p._id}>
                           <div className="col-md-4">
                             <img
-                              src={`/api/v1/product/get-photo/${p._id}`}
-                              
+                              src={`https://watchcart-backend.onrender.com/api/v1/product/get-photo/${p._id}`}
                               alt={p.name}
                               width="200px"
-                              
                             />
                           </div>
                           <div className="col-md-8">
@@ -100,7 +109,7 @@ const AdminOrders = () => {
                       ))}
                     </div>
                   </div>
-                )
+                );
               })
             }
           </div>

@@ -32,7 +32,10 @@ const Profile = () => {
       userData.append("phone", phone);
       userData.append("photo", photo);
       userData.append("address", address);
-      const { data } = await axios.put("/api/v1/auth/profile", userData);
+      const { data } = await axios.put(
+        "https://watchcart-backend.onrender.com/api/v1/auth/profile",
+        userData
+      );
       // console.log(data);
       setAuth({ ...auth, user: data?.updatedUser });
       let ls = localStorage.getItem("auth");

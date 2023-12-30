@@ -11,7 +11,9 @@ const Orders = () => {
   //get orders
   const getOrders = async () => {
     try {
-      const { data } = await axios.get("/api/v1/auth/orders");
+      const { data } = await axios.get(
+        "https://watchcart-backend.onrender.com/api/v1/auth/orders"
+      );
       setOrders(data);
     } catch (error) {
       // console.log(error);
@@ -36,7 +38,7 @@ const Orders = () => {
               orders?.map((o, i) => {
                 return (
                   <div className="border shadow my-3">
-                    <table className='table'>
+                    <table className="table">
                       <thead>
                         <tr>
                           <th scope="col">#</th>
@@ -60,27 +62,25 @@ const Orders = () => {
                       </tbody>
                     </table>
                     <div className="container">
-                    {o?.products?.map((p, i) => (
-                      <div className="row mt-2 p-3 flex-row" key={p._id}>
-                        <div className="col-md-3 user-orders-img">
-                          <img
-                            src={`/api/v1/product/get-photo/${p._id}`}
-                            
-                            alt={p.name}
-                            
-                            height={"200px"}
-                          />
+                      {o?.products?.map((p, i) => (
+                        <div className="row mt-2 p-3 flex-row" key={p._id}>
+                          <div className="col-md-3 user-orders-img">
+                            <img
+                              src={`https://watchcart-backend.onrender.com/api/v1/product/get-photo/${p._id}`}
+                              alt={p.name}
+                              height={"200px"}
+                            />
+                          </div>
+                          <div className="col-md-9">
+                            <p>{p.name}</p>
+                            <p>{p.description.substring(0, 30)}</p>
+                            <p>Price : {p.price}</p>
+                          </div>
                         </div>
-                        <div className="col-md-9">
-                          <p>{p.name}</p>
-                          <p>{p.description.substring(0, 30)}</p>
-                          <p>Price : {p.price}</p>
-                        </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                  </div>
-                )
+                );
               })
             }
           </div>

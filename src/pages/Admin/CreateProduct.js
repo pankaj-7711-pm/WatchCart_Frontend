@@ -22,7 +22,9 @@ const CreateProduct = () => {
     //get all categories
     const getAllCategory = async () => {
         try {
-            const { data } = await axios.get("/api/v1/category/get-category");
+            const { data } = await axios.get(
+              "https://watchcart-backend.onrender.com/api/v1/category/get-category"
+            );
             if (data?.success) {
                 // console.log(data.category);
                 setCategories(data?.category);
@@ -48,7 +50,10 @@ const CreateProduct = () => {
             productData.append("quantity",quantity);
             productData.append("photo",photo);
             productData.append("category",category);
-            const {data}=axios.post("/api/v1/product/create-product",productData);
+            const { data } = axios.post(
+              "https://watchcart-backend.onrender.com/api/v1/product/create-product",
+              productData
+            );
             // console.log(data)
             if(data?.success){
                 
@@ -58,7 +63,9 @@ const CreateProduct = () => {
                 
                 toast.success("Product Created Successfully");
                 // console.log(data)
-                navigate("/dashboard/admin/products");
+                navigate(
+                  "https://watchcart-backend.onrender.com/dashboard/admin/products"
+                );
             }
         } catch (error) {
             // console.log(error);

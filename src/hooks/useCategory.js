@@ -7,7 +7,9 @@ export default function useCategory(){
     //get cateegory
     const getCategories=async()=>{
         try {
-            const {data}=await axios.get("/api/v1/category/get-category");
+            const { data } = await axios.get(
+              "https://watchcart-backend.onrender.com/api/v1/category/get-category"
+            );
             setCategories(data?.category)
         } catch (error) {
             // console.log(error);

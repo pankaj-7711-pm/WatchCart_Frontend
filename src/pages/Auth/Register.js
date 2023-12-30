@@ -29,7 +29,10 @@ const Register = () => {
             userData.append("photo", photo);
             userData.append("address", address);
             userData.append("answer", answer);
-            const res = await axios.post("/api/v1/auth/register", userData);
+            const res = await axios.post(
+              "https://watchcart-backend.onrender.com/api/v1/auth/register",
+              userData
+            );
             if (res && res.data.success) {
                 toast.success(res.data.message);
                 navigate("/login");
